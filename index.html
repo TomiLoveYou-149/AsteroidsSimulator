@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Betelshards | Simulador de Impactos de Asteroides</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .accordion {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(100,100,120,0.15);
+      overflow: hidden;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .accordion-header {
+      background-color: #e3f2f5;
+      color: #334;
+      cursor: pointer;
+      padding: 15px 20px;
+      font-weight: bold;
+      text-align: left;
+      transition: background 0.3s;
+    }
+
+    .accordion-header:hover {
+      background-color: #d1ebf0;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 15px 20px;
+      background-color: #ffffffd9;
+      text-align: justify;
+    }
+
+    .accordion-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .accordion-content p {
+      margin: 10px 0;
+      color: #444;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .instagram-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      animation: fadeInInstagram 0.6s ease;
+    }
+
+    .instagram-link {
+      text-decoration: none;
+      color: #e1306c;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .instagram-link:hover {
+      color: #ff66a3;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInInstagram {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-subtitle {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #6b8e8e;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Simulador de Impactos de Asteroides</h1>
+  </header>
+
+  <main>
+    <section class="accordion">
+
+      <div class="accordion-item">
+        <div class="accordion-header">🌠 Bienvenidos a Betelshards</div>
+        <div class="accordion-content">
+          <p>En Betelshards transformamos datos del espacio en experiencias visuales poderosas. Esta plataforma creada por nuestro equipo te invita a explorar escenarios reales de impacto de asteroides, con simulaciones interactivas basadas en datos de la NASA y el USGS.</p>
+          <p>Aquí podrás ajustar parámetros del asteroide, observar la trayectoria orbital en tiempo real, visualizar las posibles zonas de impacto y ensayar estrategias de mitigación para “defender” la Tierra.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">☄️ ¿Quiénes somos?</div>
+        <div class="accordion-content">
+          <p>Somos <strong>Betelshards</strong>, un equipo creativo que combina ciencia, arte y tecnología para dar vida a ideas que inspiran. En 2024 participamos en el <strong>NASA Space Apps Challenge Chía</strong>, donde conocimos y desarrollamos nuestro primer proyecto.</p>
+          <p>Este año decidimos ir más allá: con la experiencia adquirida, creamos una página web innovadora, aplicando nuestros conocimientos en programación, diseño y comunicación para ofrecer una experiencia educativa, visual e interactiva.</p>
+          <p>Cada uno de nosotros aporta una pieza única al equipo, y juntos buscamos que la exploración del espacio se sienta más cercana, emocionante y significativa.</p>
+
+          <div class="instagram-section">
+            <div class="instagram-container">
+              <a href="https://www.instagram.com/betelshards?igsh=OXFqb3Yyand6djNh"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="instagram-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                     alt="Instagram"
+                     class="instagram-icon" width="28" height="28">
+                <span class="instagram-text">@betelshards</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">💡 ¿Por qué?</div>
+        <div class="accordion-content">
+          <p>Porque los impactos de asteroides, aunque poco comunes, representan una amenaza real para la Tierra. Sin embargo, la mayoría de las personas no cuenta con herramientas claras ni accesibles para comprender su magnitud o los métodos de prevención. Betelshards nace para acercar la ciencia espacial al público, facilitando la comprensión de estos fenómenos mediante visualizaciones interactivas y datos reales.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">⚙️ ¿Cómo?</div>
+        <div class="accordion-content">
+          <p>A través de una herramienta interactiva en línea que, con ayuda de programación y datos científicos, permite calcular y visualizar los efectos de un impacto de asteroide. Los usuarios pueden ajustar variables como que asteroide quieren, la densidad o la velocidad del asteroide y obtener resultados sobre la energía liberada, el tamaño del cráter y las posibles consecuencias ambientales. Todo en una interfaz sencilla y accesible, diseñada para que cualquier persona pueda experimentar y aprender de manera práctica.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">🚀 Misión</div>
+        <div class="accordion-content">
+          <p>Desarrollar herramientas digitales que transformen datos científicos en experiencias interactivas, fomentando el aprendizaje, la conciencia y la preparación ante riesgos espaciales, mientras acercamos la ciencia y la tecnología a todos los públicos.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">🌌 Visión</div>
+        <div class="accordion-content">
+          <p>Convertir a Betelshards en una referencia educativa y tecnológica en la simulación de fenómenos espaciales, promoviendo una sociedad más informada, curiosa e involucrada con la exploración y protección de nuestro planeta frente a los desafíos del cosmos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="controls">
+      <label for="asteroid">Selecciona un asteroide:</label>
+      <select id="asteroid"></select><br>
+
+      <label for="velocityInput">Velocidad (m/s):</label>
+      <input type="number" id="velocityInput" placeholder="Ingrese velocidad"><br>
+
+      <label for="densityInput">Densidad (kg/m³):</label>
+      <input type="number" id="densityInput" placeholder="Ingrese densidad"><br>
+
+      <button id="simulateBtn">Simular Impacto</button>
+    </section>
+
+    <section id="results">
+      <h2>Resultados de la simulación</h2>
+
+      <div id="inputs">
+        <h3>Datos ingresados</h3>
+        <p id="inputDiameter"></p>
+        <p id="inputVelocity"></p>
+        <p id="inputDensity"></p>
+      </div>
+
+      <div id="simulationResults">
+        <h3 class="result-subtitle">Resultados</h3>
+        <p id="impactEnergy"></p>
+        <p id="craterDiameter"></p>
+        <p id="risk"></p>
+      </div>
+
+      <div id="consequences">
+        <h3>Consecuencias</h3>
+        <p id="consequenceText"></p>
+      </div>
+
+      <div id="mitigation">
+        <h3>Estrategias de Mitigación</h3>
+        <p id="mitigationText"></p>
+      </div>
+
+      <canvas id="viz" width="1200" height="600"></canvas>
+      <p id="mapHint">🪐 Haz clic en cualquier parte del mapa para visualizar el punto de impacto.</p>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Datos obtenidos de la <a href="https://api.nasa.gov/" target="_blank">NASA NeoWs API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // --- Script del acordeón ---
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.classList.toggle('active');
+      });
+    });
+  </script>
+
+<div id="helpButton">?</div>
+
+<div id="helpPopup" class="hidden">
+  <h3>🪐 Instrucciones</h3>
+  <p>1️⃣ Selecciona un asteroide de la lista e ingresa tus propios valores de velocidad y densidad.</p>
+  <p>2️⃣ Presiona <strong>“Simular Impacto”</strong> para calcular los resultados.</p>
+  <p>3️⃣ Observa los datos del cráter, la energía liberada y el nivel de riesgo. </p>
+  <p>4️⃣ Haz clic en el mapa para ubicar el posible punto de impacto.</p>
+  <p>💡 Puedes repetir la simulación con diferentes valores para comparar resultados.</p>
+  <button id="closeHelp">Cerrar</button>
+</div>
+
+<script>
+  const helpBtn = document.getElementById('helpButton');
+  const helpPopup = document.getElementById('helpPopup');
+  const closeHelp = document.getElementById('closeHelp');
+
+  helpBtn.addEventListener('click', () => {
+    helpPopup.classList.toggle('hidden');
+  });
+
+  closeHelp.addEventListener('click', () => {
+    helpPopup.classList.add('hidden');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #556b7a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background: radial-gradient(#000022, #000044);
+  background-image: url('imgs/fondo.png');
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+header h1 {
+  padding: 20px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #6b8e8e;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
+
+#controls {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px auto;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(100, 100, 120, 0.15);
+}
+
+label {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+input, select, button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 2px solid rgba(150,150,150,0.3);
+  background: #f0f4f8;
+  color: #556b7a;
+  font-size: 14px;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+select:focus, input:focus {
+  border: 2px solid #a8dadc;
+  outline: none;
+}
+
+button {
+  background: linear-gradient(135deg, #a8dadc, #ffe5d9);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 25px rgba(168, 218, 220, 0.6);
+}
+
+#results {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(150,150,150,0.25);
+  width: 95%;
+  max-width: 1200px;
+}
+
+#results h2, #results h3 {
+  color: #6b8e8e;
+  margin-bottom: 10px;
+}
+
+#inputs, #simulationResults, #consequences, #mitigation {
+  background: rgba(240, 244, 248, 0.85);
+  padding: 12px;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(150,150,150,0.1);
+}
+
+#inputs p, #simulationResults p, #consequences p, #mitigation p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #556b7a;
+}
+
+#viz {
+  border-radius: 16px;
+  background: radial-gradient(circle at center, #f0f4f8 0%, #dbe7ec 100%);
+  margin-top: 20px;
+  box-shadow: 0 10px 25px rgba(150,150,150,0.25);
+  width: 95%;
+  max-width: 1600px;
+  height: 600px;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #7a8c99;
+}
+
+footer a {
+  color: #a8dadc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#controls select,
+#controls input,
+#controls button {
+  width: 250px;
+  display: block;
+  margin: 8px auto;
+}
+
+.instagram-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  animation: fadeInInstagram 0.6s ease;
+}
+
+.instagram-link {
+  text-decoration: none;
+  color: #e1306c;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.instagram-link:hover {
+  color: #ff66a3;
+  transform: scale(1.1);
+}
+
+.instagram-link img {
+  vertical-align: middle;
+}
+
+@keyframes fadeInInstagram {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #6b8e8e;
+  margin-bottom: 12px;
+  text-transform: none;
+  text-decoration: none;
+}
+
+#helpButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffafcc, #a8dadc);
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+}
+
+#helpButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+#helpPopup {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  color: #334;
+  font-size: 15px;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+#helpPopup h3 {
+  text-align: center;
+  margin-top: 0;
+  color: #6b8e8e;
+}
+
+#helpPopup p {
+  margin: 8px 0;
+  text-align: left;
+  color: #444;
+}
+
+#helpPopup button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #a8dadc, #ffe5d9);
+  color: #334;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#helpPopup button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(100, 100, 100, 0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
